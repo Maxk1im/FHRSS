@@ -2,16 +2,16 @@ import feedparser
 import telebot
 
 # Створіть екземпляр бота
-bot = telebot.TeleBot("6496665739:AAGRoDM3hT_03hJPB0sclZ4FfvYtLB6ZdkM")
+bot = telebot.TeleBot("YOUR_BOT_TOKEN")
 
 # Додайте URL-адресу RSS-каналу
-rss_url = "https://freelancehunt.com/project/skill/113.rss"
+rss_url = "YOUR_RSS_FEED_URL"
 
 # Функція для обробки оновлень RSS
 def handle_rss_update(feed):
     for entry in feed.entries:
         # Надішліть заголовок та посилання на нову статтю
-        bot.send_message(chat_id="@FreelanseHunt",
+        bot.send_message(chat_id="@YOUR_CHANNEL_USERNAME",
                          text=f"{entry.title}\n{entry.link}")
 
 # Запустіть бота
